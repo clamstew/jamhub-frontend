@@ -381,8 +381,8 @@ function audioLayerControl(elementContext)
         // });
         handleWAV(new Blob([this.toWave().encodeWaveFile()], {type: 'audio/wav'}));
 
-        $('.recorder.container').removeClass('hide');
-        $('.editor.container').addClass('invisible');
+        // $('.recorder.container').removeClass('hide');
+        // $('.editor.container').addClass('invisible');
     };
     
     this.testFilter = function testFilter()

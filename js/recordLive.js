@@ -68,10 +68,12 @@ function handleWAV(blob) {
   downloadAnchor.download = new Date().toISOString() + '.wav';
   downloadAnchor.innerHTML = 'Download';
   downloadAnchor.className = 'btn btn-primary';
+  // doesn't change behavior
+  // downloadAnchor.setAttribute('target', '_blank');
 
   editButton.onclick = function(e) {
-    $('.recorder.container').addClass('hide');
-    $('.editor.container').removeClass('invisible');
+    //$('.recorder.container').addClass('hide');
+    //$('.editor.container').removeClass('invisible');
 
     currentEditedSoundIndex = $(e.target).closest('tr').index();
     
@@ -86,23 +88,23 @@ function handleWAV(blob) {
     };
     f.readAsArrayBuffer(blob);
   };
-  editButton.innerHTML = 'Edit';
-  editButton.className = 'btn btn-primary';
+  // editButton.innerHTML = 'Edit';
+  // editButton.className = 'btn btn-primary';
 
   var newCell = newRow.insertCell(-1);
   newCell.appendChild(audioElement);
   newCell = newRow.insertCell(-1);
   newCell.appendChild(downloadAnchor);
-  newCell = newRow.insertCell(-1);
-  newCell.appendChild(editButton);
+  // newCell = newRow.insertCell(-1);
+  // newCell.appendChild(editButton);
 
   newCell = newRow.insertCell(-1);
   var toggler;
-  for (var i = 0, l = 8; i < l; i++) {
-    toggler = document.createElement('input');
-    $(toggler).attr('type', 'checkbox');
-    newCell.appendChild(toggler);
-  }
+  // for (var i = 0, l = 8; i < l; i++) {
+  //   toggler = document.createElement('input');
+  //   $(toggler).attr('type', 'checkbox');
+  //   newCell.appendChild(toggler);
+  // }
 }
 
 window.onload = function init() {
